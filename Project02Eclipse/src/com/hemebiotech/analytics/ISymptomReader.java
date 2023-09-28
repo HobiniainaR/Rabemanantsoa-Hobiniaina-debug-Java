@@ -11,6 +11,10 @@ import java.util.List;
  * 
  */
 public interface ISymptomReader {
+	/** Use method to read data from a text
+	 * 
+	 */
+	
 	/**
 	 * If no data is available, return an empty List
 	 * 
