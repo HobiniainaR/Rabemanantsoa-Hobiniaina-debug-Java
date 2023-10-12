@@ -4,12 +4,6 @@
 	import java.util.Map.Entry;
 
 
-	/**
-	 * 
-	 * Create a new file and write in this
-	 *
-	 */
-
 
 	public class WriteSymptomDataToFile implements IwriteSymptom{
 

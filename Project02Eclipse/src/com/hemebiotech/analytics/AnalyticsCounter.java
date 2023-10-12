@@ -9,12 +9,10 @@ public class AnalyticsCounter {
 	private static int dialatedpupilCount = 0;		
 
 	public static void main(String args[]) throws Exception {
-	try {	
-		BufferedReader reader = new BufferedReader (new FileReader(".\\ Project02 \\symptoms.txt"));
+	try (BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"))){
 		    String line = reader.readLine();
 
-		
-		while (line != null) {
+			while (line != null) {
 			System.out.println("symptom from file: " + line);
 			if (line.equals("headache")) {
 				headacheCount++;
@@ -30,29 +28,22 @@ public class AnalyticsCounter {
 			}
             
 			line = reader.readLine();
-			
-		    }
+			}
+			reader.close() ;
 	  }
 			catch (IOException e) {
 				e.printStackTrace();
 			}
-		
-	
-	
-		}
-		
-		
-		FileWriter writer = null;
+			
 		try {
-	    writer = new FileWriter (".\\Project02\\result.out");
+	    FileWriter writer = new FileWriter ("result.out");
 		writer.write("headache: " + headacheCount + "\n");
 		writer.write("rash: " + rashCount + "\n");
 		writer.write("dialated pupils: " + dialatedpupilCount + "\n");
+		writer.close();
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
-		finally {
-		writer.close();
+
 	}
-}
 }
