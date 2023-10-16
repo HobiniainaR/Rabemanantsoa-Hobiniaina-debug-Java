@@ -34,9 +34,9 @@ public class AnalyticsCounter {
 			catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+		FileWriter writer= null;	
 		try {
-	    FileWriter writer = new FileWriter ("result.out");
+	    writer  = new FileWriter ("result.out");
 		writer.write("headache: " + headacheCount + "\n");
 		writer.write("rash: " + rashCount + "\n");
 		writer.write("dialated pupils: " + dialatedpupilCount + "\n");
