@@ -4,10 +4,11 @@ import java.util.Map;
 public class WriteSymptomDataToFile implements ISymptomWriter{
 		
 	@Override	
-	public void writesymptoms(Map<String,Integer>symptoms){
+	public void writeSymptoms(Map<String,Integer>symptoms){
 				
 		try {	
-		FileWriter	writer = new FileWriter("result.out");
+		
+			FileWriter	writer = new FileWriter("result.out");
 			for (Map.Entry<String, Integer> symptom : symptoms.entrySet()) {
 				
 				writer.write(symptom.getKey() + " : " + symptom.getValue() + "\n");
