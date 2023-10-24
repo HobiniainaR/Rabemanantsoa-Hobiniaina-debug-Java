@@ -29,10 +29,12 @@ public class AnalyticsCounter {
     	   }
     	   return result;
     }
+    
     public Map <String,Integer> sortSymptoms (Map<String, Integer> symptoms){ 
     	   TreeMap<String,Integer>sortedSymptoms = new TreeMap<>(symptoms);
     	   return sortedSymptoms;
     }
+    
     public void writeSymptoms(Map<String, Integer> symptoms) {
     	   writer.writeSymptoms(symptoms);
     }
