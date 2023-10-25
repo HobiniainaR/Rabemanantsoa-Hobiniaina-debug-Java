@@ -33,7 +33,7 @@ public class AnalyticsCounter {
      */
     
     public List<String> getSymptoms(){
-    	  return reader. GetSymptoms();
+    	  return reader. getSymptoms();
     }
     
     /**
@@ -42,14 +42,13 @@ public class AnalyticsCounter {
      * @param symptoms The listing of all Symptoms to analyze.
      * @return a Map containing each unique symptom and its occurrence count.
      */
-    
     public Map <String,Integer> countSymptoms (List <String>symptoms){
     	   Map<String,Integer> result = new HashMap<String,Integer>();
     	   for(String symptom : symptoms) {
-    	   if(result.containsKey(symptom)) 
-    		   result.put(symptom,result.get(symptom)+1);
-    	   else
-    		   result.put(symptom,1);
+    		   if(result.containsKey(symptom)) 
+    			   result.put(symptom,result.get(symptom)+1);
+    		   else
+    			   result.put(symptom,1);
     	   }
     	   return result;
     }
@@ -60,7 +59,6 @@ public class AnalyticsCounter {
      * @param symptoms The Map of symptoms to sort.
      * @return a TreeMap containing the list of symptoms sorted in alphabetical order.
      */
-    
     public Map <String,Integer> sortSymptoms (Map<String, Integer> symptoms){ 
     	   TreeMap<String,Integer>sortedSymptoms = new TreeMap<>(symptoms);
     	   return sortedSymptoms;
